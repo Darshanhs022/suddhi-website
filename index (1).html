@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUDDHI Cow Ghee — Pure. Crafted. Nourishing.</title>
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #F5F1E8;
+      --cream-d: #EDE8DB;
+      --green:   #1F4D2B;
+      --gold:    #C89B3C;
+      --gold-lt: #E8C97A;
+      --text:    #444;
+      --text-lt: #6B6358;
+      --max-w:   1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+      line-height: 1.75;
+      font-size: 17px;
+    }
+
+    /* ─── Container ─── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ─── Section spacing ─── */
+    section { padding: 100px 0; }
+
+    /* ─── Typography ─── */
+    h1, h2, h3 {
+      font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+      color: var(--green);
+      font-weight: normal;
+      letter-spacing: 0.03em;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 1.4rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 56px;
+      background: var(--gold);
+      margin-top: 10px;
+    }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+
+    /* ─── Gold divider ─── */
+    .gold-divider {
+      border: none;
+      border-top: 1px solid var(--gold);
+      opacity: 0.35;
+      margin: 0;
+    }
+
+    /* ─── Button ─── */
+    .btn {
+      display: inline-block;
+      padding: 14px 38px;
+      background: transparent;
+      color: var(--cream);
+      border: 1.5px solid rgba(255,255,255,0.7);
+      font-family: inherit;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--gold-lt);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--cream);
+      border: 1.5px solid var(--green);
+      padding: 13px 38px;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .btn-green:hover { background: #163620; border-color: #163620; }
+
+    /* ════════════════════════════════════════
+       1. HERO
+    ════════════════════════════════════════ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/hero-ghee.jpg.png') center center / cover no-repeat;
+      transform: scale(1);
+      transition: transform 8s ease;
+    }
+
+    #hero:hover .hero-bg { transform: scale(1.03); }
+
+    #hero .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(30,20,10,0.48) 0%,
+        rgba(20,14,6,0.62) 60%,
+        rgba(15,10,4,0.72) 100%
+      );
+    }
+
+    #hero .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #FDF8EE;
+      padding: 60px 32px;
+      max-width: 780px;
+    }
+
+    #hero .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 22px;
+      opacity: 0.9;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      color: #FDF8EE;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-weight: normal;
+    }
+
+    #hero .tagline {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(253,248,238,0.85);
+      max-width: 560px;
+      margin: 0 auto 14px;
+      font-style: italic;
+    }
+
+    #hero .subtext {
+      font-size: 0.92rem;
+      color: rgba(253,248,238,0.65);
+      margin-bottom: 48px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-ornament {
+      color: var(--gold-lt);
+      font-size: 1.4rem;
+      letter-spacing: 0.4em;
+      margin-bottom: 28px;
+      opacity: 0.6;
+    }
+
+    /* ════════════════════════════════════════
+       2. VISION
+    ════════════════════════════════════════ */
+    #vision {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    #vision .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    #vision .vision-lead {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-lt);
+      margin-bottom: 2rem;
+      line-height: 1.9;
+    }
+
+    #vision ul {
+      list-style: none;
+      margin-top: 2.4rem;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+    }
+
+    #vision ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.97rem;
+      color: var(--text);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(200,155,60,0.15);
+    }
+
+    #vision ul li::before {
+      content: '◆';
+      color: var(--gold);
+      font-size: 0.55rem;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* ════════════════════════════════════════
+       3. PROCESS
+    ════════════════════════════════════════ */
+    #process {
+      background: var(--cream-d);
+    }
+
+    #process .process-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    #process .process-text p {
+      font-size: 1rem;
+      line-height: 1.9;
+      margin-bottom: 1.1rem;
+    }
+
+    #process .process-steps {
+      counter-reset: step;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-desc { font-size: 0.96rem; line-height: 1.7; color: var(--text); }
+
+    #process .process-img {
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 12px 48px rgba(30,20,10,0.1);
+    }
+
+    #process .process-img img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    #process .process-img:hover img { transform: scale(1.04); }
+
+    /* ════════════════════════════════════════
+       4. HEALTH
+    ════════════════════════════════════════ */
+    #health {
+      background: var(--cream);
+    }
+
+    #health .health-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    #health .health-img {
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 12px 48px rgba(30,20,10,0.1);
+      order: 2;
+    }
+
+    #health .health-img img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    #health .health-img:hover img { transform: scale(1.04); }
+
+    #health .health-text { order: 1; }
+
+    #health .health-text p {
+      font-size: 0.97rem;
+      line-height: 1.9;
+    }
+
+    .vitamins-tag {
+      display: inline-block;
+      margin-top: 1.4rem;
+      padding: 9px 18px;
+      border: 1px solid rgba(200,155,60,0.4);
+      color: var(--text-lt);
+      font-size: 0.83rem;
+      letter-spacing: 0.1em;
+      background: rgba(200,155,60,0.05);
+    }
+
+    /* ════════════════════════════════════════
+       5. EVERYDAY MEALS
+    ════════════════════════════════════════ */
+    #meals {
+      background: var(--cream-d);
+      text-align: center;
+    }
+
+    #meals .section-sub {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-lt);
+      max-width: 520px;
+      margin: 0 auto 3.5rem;
+    }
+
+    #meals .meal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .meal-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .meal-card .img-wrap {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(30,20,10,0.1);
+      aspect-ratio: 3/4;
+    }
+
+    .meal-card .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .meal-card:hover .img-wrap img { transform: scale(1.05); }
+
+    .meal-card figcaption {
+      margin-top: 14px;
+      font-size: 0.88rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+    }
+
+    /* ════════════════════════════════════════
+       6. FARM
+    ════════════════════════════════════════ */
+    #farm {
+      background: var(--cream);
+    }
+
+    #farm .farm-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    #farm .farm-text p {
+      font-size: 0.97rem;
+      line-height: 1.9;
+    }
+
+    #farm .farm-img {
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 12px 48px rgba(30,20,10,0.1);
+    }
+
+    #farm .farm-img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    #farm .farm-img:hover img { transform: scale(1.04); }
+
+    /* ════════════════════════════════════════
+       7. FEEDBACK
+    ════════════════════════════════════════ */
+    #feedback {
+      background: var(--cream-d);
+      text-align: center;
+    }
+
+    #feedback .feedback-intro {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-lt);
+      max-width: 520px;
+      margin: 0 auto 3rem;
+    }
+
+    #feedback form {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+      margin-bottom: 10px;
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 16px;
+      background: rgba(245,241,232,0.7);
+      border: 1px solid rgba(200,155,60,0.3);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.97rem;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 1px;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.93rem;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--green);
+      cursor: pointer;
+    }
+
+    .form-submit { margin-top: 2.4rem; }
+
+    /* ════════════════════════════════════════
+       8. FOOTER
+    ════════════════════════════════════════ */
+    footer {
+      background: var(--cream);
+      padding: 52px 32px;
+      text-align: center;
+    }
+
+    footer .footer-brand {
+      font-size: 1.3rem;
+      color: var(--green);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    footer .footer-tag {
+      font-size: 0.83rem;
+      letter-spacing: 0.1em;
+      color: var(--text-lt);
+      font-style: italic;
+    }
+
+    footer .footer-loc {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .gold-top { border-top: 1px solid var(--gold); opacity: 0.3; }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      #process .process-inner,
+      #health .health-inner,
+      #farm .farm-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      #health .health-img { order: -1; }
+
+      #meals .meal-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      section { padding: 70px 0; }
+    }
+
+    @media (max-width: 560px) {
+      #meals .meal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #hero h1 { font-size: 2.4rem; }
+
+      .container { padding: 0 20px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var feedbackForm = document.querySelector('.feedback-form');
+        if (feedbackForm) {
+          feedbackForm.addEventListener('submit', function(e) {
+            // Let the form submit, then reset after a short delay
+            setTimeout(function() {
+              feedbackForm.reset();
+            }, 100);
+          });
+        }
+      });
+    </script>
+</head>
+<body>
+
+  <!-- ════ 1. HERO ════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Small Batch · Hand Churned · Pure</p>
+      <div class="hero-ornament">— ◆ —</div>
+      <h1>SUDDHI<br>Cow Ghee</h1>
+      <p class="tagline">Elevate your everyday meals with healthy and flavorful ghee.</p>
+      <p class="subtext">Prepared from fresh milk, carefully transformed into pure ghee in small batches.</p>
+      <a href="#process" class="btn">Know Our Process</a>
+    </div>
+  </section>
+
+  <hr class="gold-divider">
+
+  <!-- ════ 2. VISION ════ -->
+  <section id="vision">
+    <div class="container">
+      <div class="inner">
+        <h2>Our Vision</h2>
+        <div class="vision-lead">
+          <p>At SUDDHI, we believe good food begins with purity and care.<br>
+          Our vision is simple — to bring ghee back to the dining table not just as an ingredient, but as nourishment that enhances both taste and well-being.</p>
+        </div>
+        <ul>
+          <li>Prepared in small batches</li>
+          <li>Made from fresh milk set into curd overnight</li>
+          <li>Hand churned to extract butter</li>
+          <li>Slowly transformed into aromatic ghee</li>
+          <li>Crafted with care and hygiene</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-divider">
+
+  <!-- ════ 3. PROCESS ════ -->
+  <section id="process">
+    <div class="container">
+      <div class="process-inner">
+        <div class="process-text">
+          <h2>From Milk to Ghee</h2>
+          <p>Each jar of SUDDHI ghee carries a story of patience and tradition — a quiet ritual practiced with the same care every single time.</p>
+          <div class="process-steps">
+            <div class="step">
+              <div class="step-num">01</div>
+              <p class="step-desc">Fresh milk is gently boiled and cooled to the right temperature.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">02</div>
+              <p class="step-desc">It is then cultured overnight to set slowly into curd.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">03</div>
+              <p class="step-desc">The curd is hand-churned to carefully separate pure butter.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">04</div>
+              <p class="step-desc">The butter is gently heated until it turns into golden, aromatic ghee.</p>
+            </div>
+          </div>
+        </div>
+        <div class="process-img">
+          <img src="images/churning-process.jpg.png" alt="Hand churning process to make ghee" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-divider">
+
+  <!-- ════ 4. HEALTH ════ -->
+  <section id="health">
+    <div class="container">
+      <div class="health-inner">
+        <div class="health-text">
+          <h2>Why Ghee Matters</h2>
+          <p>Moderate consumption of ghee support digestion and gut health. It provides sustained energy and enhances the flavor and satiety of meals.</p>
+          <p>Ghee naturally contains fat-soluble vitamins such as Vitamin A, D, E and K, which help in nutrient absorption when consumed as part of a balanced diet.</p>
+          <div class="vitamins-tag">Vitamins A · D · E · K — naturally present</div>
+        </div>
+        <div class="health-img">
+          <img src="images/ghee-bowl.jpg.png" alt="A bowl of pure SUDDHI ghee" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-divider">
+
+  <!-- ════ 5. EVERYDAY MEALS ════ -->
+  <section id="meals">
+    <div class="container">
+      <h2>Made for Everyday Meals</h2>
+      <p class="section-sub">A spoon of ghee can elevate both the taste and nutritional value of simple meals.</p>
+      <div class="meal-grid">
+        <figure class="meal-card">
+          <div class="img-wrap">
+            <img src="images/roti-ghee.jpg.png" alt="Roti with ghee" loading="lazy">
+          </div>
+          <figcaption>Roti</figcaption>
+        </figure>
+        <figure class="meal-card">
+          <div class="img-wrap">
+            <img src="images/ragi-ghee.jpg.png" alt="Ragi Ball with ghee" loading="lazy">
+          </div>
+          <figcaption>Ragi Ball</figcaption>
+        </figure>
+        <figure class="meal-card">
+          <div class="img-wrap">
+            <img src="images/rice-ghee.jpg.png" alt="Rice with ghee" loading="lazy">
+          </div>
+          <figcaption>Rice</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-divider">
+
+  <!-- ════ 6. FARM ════ -->
+  <section id="farm">
+    <div class="container">
+      <div class="farm-inner">
+        <div class="farm-text">
+          <h2>From Our Farm</h2>
+          <p>We prepare SUDDHI ghee from fresh milk in small batches, maintaining quality and hygiene at every stage.</p>
+          <p>Our focus is consistency, care and delivering a product that you can confidently place on your family's table.</p>
+        </div>
+        <div class="farm-img">
+          <img src="images/cow-farm.jpg.png" alt="Our cow farm" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-divider">
+
+  <!-- ════ 7. FEEDBACK ════ -->
+  <section id="Feedback">
+    <div class="container">
+      <h2>Your experience helps us improve and grow responsibly</h2>
+      <form action="https://formspree.io/f/mkovqgza" method="POST" class="feedback-form" style="max-width: 700px; margin: 0 auto; background: var(--cream-d); padding: 2rem; border-radius: 8px; box-shadow: 0 8px 30px rgba(30,20,10,0.08);">
+
+        <label style="display:block;margin-bottom:0.5rem;color:var(--green);font-weight:bold;">How would you rate your overall experience with SUDDHI Cow Ghee?</label>
+        <div style="margin-bottom:1.2rem;">
+          <label><input type="radio" name="experience" value="Excellent" required> Excellent</label><br>
+          <label><input type="radio" name="experience" value="Very Good"> Very Good</label><br>
+          <label><input type="radio" name="experience" value="Good"> Good</label><br>
+          <label><input type="radio" name="experience" value="Average"> Average</label><br>
+          <label><input type="radio" name="experience" value="Not Satisfied"> Not Satisfied</label>
+        </div>
+
+        <label style="display:block;margin-bottom:0.5rem;color:var(--green);font-weight:bold;">Would you purchase SUDDHI again?</label>
+        <div style="margin-bottom:1.2rem;">
+          <label><input type="radio" name="purchase" value="Definitely" required> Definitely</label><br>
+          <label><input type="radio" name="purchase" value="Probably"> Probably</label><br>
+          <label><input type="radio" name="purchase" value="Not sure"> Not sure</label><br>
+          <label><input type="radio" name="purchase" value="No"> No</label>
+        </div>
+
+        <label for="improve" style="display:block;margin-bottom:0.5rem;color:var(--green);font-weight:bold;">What can we improve? Your suggestions…</label>
+        <textarea id="improve" name="improve" rows="4" style="width:100%;margin-bottom:1.2rem;padding:0.6rem;border-radius:4px;border:1px solid #ccc;"></textarea>
+
+        <label style="display:block;margin-bottom:0.5rem;color:var(--green);font-weight:bold;">What other products would you like from SUDDHI?</label>
+        <div style="margin-bottom:1.2rem;">
+          <label><input type="checkbox" name="products" value="Traditional White Butter"> Traditional White Butter</label><br>
+          <label><input type="checkbox" name="products" value="Paneer"> Paneer</label><br>
+          <label><input type="checkbox" name="products" value="Artisanal Cheese"> Artisanal Cheese</label><br>
+          <label><input type="checkbox" name="products" value="Farm Fresh Curd"> Farm Fresh Curd</label>
+        </div>
+
+        <button type="submit" style="background: var(--gold); color: white; padding: 0.7rem 2rem; border: none; border-radius: 4px; font-size: 1.1rem;">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ════ 8. FOOTER ════ -->
+  <hr class="gold-divider">
+
+  <!-- ════ 7. CONTACT ════ -->
+  <section class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-grid" style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem;">
+        <div class="contact-item" style="background: var(--cream-d); padding: 2rem 1.5rem; border-radius: 12px; min-width: 180px; box-shadow: 0 2px 8px rgba(200,155,60,0.07); text-align: center;">
+          <h3 style="color: var(--green); margin-bottom: 0.5rem;">Phone</h3>
+          <p style="color: var(--text-lt); font-size: 1.1rem;">+91 XXXXX XXXXX</p>
+        </div>
+        <div class="contact-item" style="background: var(--cream-d); padding: 2rem 1.5rem; border-radius: 12px; min-width: 180px; box-shadow: 0 2px 8px rgba(200,155,60,0.07); text-align: center;">
+          <h3 style="color: var(--green); margin-bottom: 0.5rem;">WhatsApp</h3>
+          <p style="color: var(--text-lt); font-size: 1.1rem;">+91 XXXXX XXXXX</p>
+        </div>
+        <div class="contact-item" style="background: var(--cream-d); padding: 2rem 1.5rem; border-radius: 12px; min-width: 180px; box-shadow: 0 2px 8px rgba(200,155,60,0.07); text-align: center;">
+          <h3 style="color: var(--green); margin-bottom: 0.5rem;">Location</h3>
+          <p style="color: var(--text-lt); font-size: 1.1rem;">Karnataka, India</p>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 3rem;">
+      
+    </div>
+  </section>
+
+  <hr class="gold-top">
+  <footer>
+    <div class="container">
+      <p>&copy; SUDDHI &mdash; Prepared at Vinayaka Farm</p>
+    </div>
+  </footer>
+
+</body>
+</html>
