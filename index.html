@@ -126,7 +126,7 @@
     #hero .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('images/hero-ghee.png') center center / cover no-repeat;
+      background: url('images/hero-ghee.jpeg') center center / cover no-repeat;
       transform: scale(1);
       transition: transform 8s ease;
     }
@@ -374,7 +374,7 @@
     #meals .meal-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 16px;
     }
 
     .meal-card {
@@ -385,7 +385,6 @@
 
     .meal-card .img-wrap {
       width: 100%;
-      max-width: 340px;
       border-radius: 4px;
       overflow: hidden;
       box-shadow: 0 8px 28px rgba(30,20,10,0.1);
@@ -653,33 +652,27 @@
   <hr class="gold-divider">
 
   <!-- ════ 3. PROCESS ════ -->
-  <section id="process">
-    <div class="container">
-      <div class="process-inner">
-        <div class="process-text">
-          <h2>From Milk to Ghee</h2>
-          <p>Each jar of SUDDHI ghee carries a story of patience and tradition — a quiet ritual practiced with the same care every single time.</p>
-          <div class="process-steps">
-            <div class="step">
-              <div class="step-num">01</div>
-              <p class="step-desc">Fresh milk is gently boiled and cooled to the right temperature.</p>
-            </div>
-            <div class="step">
-              <div class="step-num">02</div>
-              <p class="step-desc">It is then cultured overnight to set slowly into curd.</p>
-            </div>
-            <div class="step">
-              <div class="step-num">03</div>
-              <p class="step-desc">The curd is hand-churned to carefully separate pure butter.</p>
-            </div>
-            <div class="step">
-              <div class="step-num">04</div>
-              <p class="step-desc">The butter is gently heated until it turns into golden, aromatic ghee.</p>
-            </div>
-          </div>
+  <section id="process" style="position:relative; background:url('images/churning-process.jpeg') center center/cover no-repeat;">
+    <div style="position:absolute; inset:0; background:rgba(245,241,232,0.82); z-index:1;"></div>
+    <div class="container" style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:480px; text-align:center;">
+      <h2>From Milk to Ghee</h2>
+      <p>Each jar of SUDDHI ghee carries a story of patience and tradition — a quiet ritual practiced with the same care every single time.</p>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <p class="step-desc">Fresh milk is gently boiled and cooled to the right temperature.</p>
         </div>
-        <div class="process-img">
-          <img src="images/churning-process.png" alt="Hand churning process to make ghee" loading="lazy">
+        <div class="step">
+          <div class="step-num">02</div>
+          <p class="step-desc">It is then cultured overnight to set slowly into curd.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <p class="step-desc">The curd is hand-churned to carefully separate pure butter.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <p class="step-desc">The butter is gently heated until it turns into golden, aromatic ghee.</p>
         </div>
       </div>
     </div>
@@ -688,19 +681,13 @@
   <hr class="gold-divider">
 
   <!-- ════ 4. HEALTH ════ -->
-  <section id="health">
-    <div class="container">
-      <div class="health-inner">
-        <div class="health-text">
-          <h2>Why Ghee Matters</h2>
-          <p>Moderate consumption of ghee support digestion and gut health. It provides sustained energy and enhances the flavor and satiety of meals.</p>
-          <p>Ghee naturally contains fat-soluble vitamins such as Vitamin A, D, E and K, which help in nutrient absorption when consumed as part of a balanced diet.</p>
-          <div class="vitamins-tag">Vitamins A · D · E · K — naturally present</div>
-        </div>
-        <div class="health-img">
-          <img src="images/ghee-bowl.png" alt="A bowl of pure SUDDHI ghee" loading="lazy">
-        </div>
-      </div>
+  <section id="health" style="position:relative; background:url('images/ghee-bowl.jpeg') center center/cover no-repeat;">
+    <div style="position:absolute; inset:0; background:rgba(245,241,232,0.82); z-index:1;"></div>
+    <div class="container" style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:480px; text-align:center;">
+      <h2>Why Ghee Matters</h2>
+      <p>Moderate consumption of ghee support digestion and gut health. It provides sustained energy and enhances the flavor and satiety of meals.</p>
+      <p>Ghee naturally contains fat-soluble vitamins such as Vitamin A, D, E and K, which help in nutrient absorption when consumed as part of a balanced diet.</p>
+      <div class="vitamins-tag">Vitamins A · D · E · K — naturally present</div>
     </div>
   </section>
 
@@ -737,18 +724,12 @@
   <hr class="gold-divider">
 
   <!-- ════ 6. FARM ════ -->
-  <section id="farm">
-    <div class="container">
-      <div class="farm-inner">
-        <div class="farm-text">
-          <h2>From Our Farm</h2>
-          <p>We prepare SUDDHI ghee from fresh milk in small batches, maintaining quality and hygiene at every stage.</p>
-          <p>Our focus is consistency, care and delivering a product that you can confidently place on your family's table.</p>
-        </div>
-        <div class="farm-img">
-          <img src="images/cow-farm.png" alt="Our cow farm" loading="lazy">
-        </div>
-      </div>
+  <section id="farm" style="position:relative; background:url('images/cow-farm.png') center center/cover no-repeat;">
+    <div style="position:absolute; inset:0; background:rgba(245,241,232,0.82); z-index:1;"></div>
+    <div class="container" style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:480px; text-align:center;">
+      <h2>From Our Farm</h2>
+      <p>We prepare SUDDHI ghee from fresh milk in small batches, maintaining quality and hygiene at every stage.</p>
+      <p>Our focus is consistency, care and delivering a product that you can confidently place on your family's table.</p>
     </div>
   </section>
 
